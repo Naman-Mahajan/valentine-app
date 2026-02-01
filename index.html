@@ -108,7 +108,7 @@ h1 {
 <body>
 
 <div class="card">
-  <img src="image.png" alt="Love" />
+ <img id="valentineImg" src="image.png" alt="Love" />
   <h1>Will you be my Valentine? 💘</h1>
 
   <div class="buttons">
@@ -142,11 +142,23 @@ function moveNo() {
   noBtn.addEventListener(e, moveNo)
 );
 
+// yesBtn.addEventListener("click", () => {
+//   successMsg.style.display = "block";
+//   noBtn.style.display = "none";
+//   createHearts();
+// });
+
 yesBtn.addEventListener("click", () => {
   successMsg.style.display = "block";
   noBtn.style.display = "none";
+
+  // Change the image
+  const img = document.getElementById("valentineImg");
+  img.src = "image2.png";
+
   createHearts();
 });
+
 
 function createHearts() {
   setInterval(() => {
